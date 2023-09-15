@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/sidebar', { status: status, results: birds.length }) %>
+    <main id="birds">
+        <% for (let i = 0; i < birds.length; i++) { %>
+            <%- include('partials/bird', { bird: birds[i] }) %>
+        <% } %>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

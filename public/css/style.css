@@ -1,0 +1,207 @@
+/* global variables */
+:root {
+    --theme-main-dark: #1769aa;
+    --theme-main: #2196f3;
+    --theme-main-light: #4dabf5;
+    --aside-width: 300px;
+    --card-width: 350px;
+}
+
+/* grid layout */
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: var(--aside-width) 1fr;
+}
+header, footer {
+    grid-column: span 2;
+}
+/* Small screens (phones) */
+@media (max-width: 620px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content 1fr min-content;
+    }
+    header, footer {
+        grid-column: span 1;
+    }
+    header h1 {
+        font-size: 30px !important;
+    }
+}
+
+/* flex layouts */
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}
+#birds {
+    padding: 32px;
+    /* flex-basis: calc(100vw - var(--aside-width)); */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+    gap: 16px;
+}
+.card:only-child {
+    grid-column: 1 / -1;
+}
+.card:only-child .card-image {
+    height: 50%;
+}
+
+/* general styles */
+body {
+    background: #eee;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+}
+
+header, footer {
+    background-color: var(--theme-main);
+    color: white;
+    position: relative;
+}
+header img {
+    height: 50px;
+    margin-right: 16px;
+}
+header h1 {
+    font-size: 50px;
+}
+
+/* form styles */
+aside {
+    background: white;
+    flex-basis: var(--aside-width);
+    padding: 16px;
+}
+label, select, input, .button {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+}
+select, input, .button {
+    margin-bottom: 8px;
+    height: 32px;
+}
+.button {
+    background: var(--theme-main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: large;
+    box-shadow: 1px 1px 4px #0007;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.button:hover {
+    background: var(--theme-main-light);
+}
+.button:active {
+    background: var(--theme-main-dark);
+}
+
+/* bird cards */
+#birds {
+    box-shadow: inset 0px 0px 8px #0007;
+}
+.card {
+    box-shadow: 2px 2px 8px #0007;
+    background: white;
+    border-radius: 5px;
+    /* max-width: var(--card-width); */
+    /* flex-grow: 1; */
+    /* max-width: 100%; */
+}
+.card-image {
+    position: relative;
+}
+.card-image img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.card-image .card-title {
+    background: linear-gradient(0deg, #000a 20%, #0000 100%);
+    /* background: #0007; */
+    position: absolute;
+    width: calc(100% - 16px);
+    height: 50%;
+    bottom: 0px;
+    padding-left: 16px;
+    color: white;
+}
+.card-image .card-title p {
+    position: absolute;
+    font-size: x-large;
+    bottom:10px;
+}
+.card-image .card-title span {
+    position: absolute;
+    font-size: medium;
+    bottom: 8px;
+}
+
+/* card content style */
+.card-content {
+    padding: 20px;
+}
+h2 {
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+li {
+    display: flex;
+}
+li b {
+    width: 115px;
+}
+li span {
+    width: calc(100% - 115px);
+}
+
+/* conservation status circles */
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 16px;
+    bottom: -25px;
+    display: block;
+    z-index: 100;
+    border: 4px solid white;
+}
+
+.circle-small {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid white;
+}
