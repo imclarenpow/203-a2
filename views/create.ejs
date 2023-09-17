@@ -10,33 +10,33 @@
     <%- include('partials/sidebar', { status: status }) %>
     <main id="birds">
         <div class="lmarg">
-            <h1>Edit Bird</h1>
-            <form action="/birds/<%= bird.bird_id %>/edit" method="POST" enctype="multipart/form-data">
+            <h1>Create a New Bird</h1>
+            <form action="/birds/create" method="POST" enctype="multipart/form-data">
                 <label for="primary_name">Primary Name:</label>
-                <input type="text" id="primary_name" name="primary_name" value="<%= bird.primary_name %>" required>
+                <input type="text" id="primary_name" name="primary_name" required>
                 <label for="english_name">English Name:</label>
-                <input type="text" id="english_name" name="english_name" value="<%= bird.english_name %>" required>
+                <input type="text" id="english_name" name="english_name" required>
                 <label for="scientific_name">Scientific Name:</label>
-                <input type="text" id="scientific_name" name="scientific_name" value="<%= bird.scientific_name %>" required>
+                <input type="text" id="scientific_name" name="scientific_name" required>
                 <label for="order_name">Order Name:</label>
-                <input type="text" id="order_name" name="order_name" value="<%= bird.order_name %>" required>
+                <input type="text" id="order_name" name="order_name" required>
                 <label for="family">Family:</label>
-                <input type="text" id="family" name="family" value="<%= bird.family %>" required>
+                <input type="text" id="family" name="family" required>
                 <label for="weight">Weight (g):</label>
-                <input type="number" id="weight" name="weight" value="<%= bird.weight %>" required>
+                <input type="number" id="weight" name="weight" required>
                 <label for="length">Length (cm):</label>
-                <input type="number" id="length" name="length" value="<%= bird.length %>" required>
+                <input type="number" id="length" name="length" required>
                 <label for="status_id">Conservation Status:</label>
                 <select id="status_id" name="status_id" required>
                     <% for (const statusItem of status) { %>
-                        <option value="<%= statusItem.status_id %>" <%= bird.status_id === statusItem.status_id ? 'selected' : '' %>><%= statusItem.status_name %></option>
+                        <option value="<%= statusItem.status_id %>"><%= statusItem.status_name %></option>
                     <% } %>                    
                 </select>
                 <label for="photo">Upload Photo:</label>
                 <input type="file" id="photo" name="photo">
                 <label for="photographer">Photographer:</label>
-                <input type="text" id="photographer" name="photographer" value="<%= bird.photographer %>">
-                <button type="submit">Update Bird</button>
+                <input type="text" id="photographer" name="photographer">
+                <button type="submit">Create Bird</button>
             </form>
         </div>
     </main>
