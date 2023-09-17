@@ -165,6 +165,9 @@ select, input, .button {
 /* card content style */
 .card-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 h2 {
     margin: 0;
@@ -204,4 +207,15 @@ li span {
     border-radius: 50%;
     margin-right: 8px;
     border: 1px solid white;
+}
+.button-layout {
+    flex-direction: column-reverse;
+}
+.bird-data {
+    flex-direction: column;
+    flex-grow: 0;
+    align-self: flex-start;
+}
+.lmarg {
+    padding: 5%;
 }

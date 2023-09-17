@@ -10,7 +10,7 @@
 
     <div class="card-content">
         <h2 class="card-title"><%= bird.english_name %></h2>
-        <ul>
+        <ul class="bird-data">
             <li><b>Scientific Name</b><span><%= bird.scientific_name %></span></li>
             <li><b>Family</b><span><%= bird.family %></span></li>
             <li><b>Order</b><span><%= bird.order_name %></span></li>
@@ -18,8 +18,10 @@
             <li><b>Length</b><span><%= bird.length %> cm</span></li>
             <li><b>Weight</b><span><%= bird.weight %> g</span></li>
         </ul>
+        <div class="button-layout">
             <a class="button" href="/birds/<%= bird.bird_id %>">View</a>
             <a class="button" href="/birds/<%= bird.bird_id %>/edit">Edit</a>
-            <a class="button" href="/birds/:<%= bird.bird_id %>/delete">Delete</a>
+            <a class="button" href="/birds/<%= bird.bird_id %>/delete">Delete</a>
+        </div>
     </div>
 </div>

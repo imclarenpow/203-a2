@@ -10,8 +10,10 @@
     <%- include('partials/sidebar', { status: status, results: birds.length }) %>
     <main id="birds">
         <% for (let i = 0; i < birds.length; i++) { %>
-            <%- include('partials/bird', { bird: birds[i] }) %>
-        <% } %>
+            <% if (birds[i] || photos[i]) { %>
+                <%- include('partials/bird', { bird: birds[i], photo: photos[i] }) %>
+            <% } %>
+        <% } %>        
     </main>
     <%- include('partials/footer') %>
 </body>
