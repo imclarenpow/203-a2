@@ -260,7 +260,7 @@ router.use(async(req, res) => {
             WHERE Bird.bird_id = ?
         `;
         const [birdRows, birdFields] = await db.query(birdQuery, [id]);
-        const bird = birdRows[0]; // Assuming the bird_id is unique
+        const bird = birdRows[0];
         res.status(404).render('404', {status: conservation_status_data, bird});
     } catch (err) {
         console.error('Error with 404 (this is bad):', err);

@@ -11,6 +11,16 @@ Used Docker,
 - Enter Password (password)
 - Enter ```source sql/db_setup.sql```
 - Then ```source sql/db_populate.sql```
+## Sources for Code
+- Template Pulled from [this](https://altitude.otago.ac.nz/cosc203/code/asgn2-starter) Git Repository
+- ChatGPT, especially with file upload
+- StackOverflow
+- Lab 11 and 13
+- My mate who does back end work for a living (especially this query:
+            ```SELECT Bird.*, ConservationStatus.status_colour, Photos.filename, Photos.photographer```
+            ```FROM Bird```
+            ```INNER JOIN ConservationStatus ON Bird.status_id = ConservationStatus.status_id```
+            ```LEFT JOIN Photos ON Bird.bird_id = Photos.bird_id```)
 ## Routes and Uses
 Lets quickly outline all the the routes and what they're used for as they are shown in ```path_router.js```
 ### /birds
